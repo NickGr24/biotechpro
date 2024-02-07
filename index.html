@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biotechpro</title>
+    <link rel="stylesheet" href="public/styles.css">
+    <link rel="icon" href="/img/favicon-32.png" type="image/x-icon">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+    <nav class="container mx-auto my-6 md:flex md:items-center md:justify-between">
+      <img src="/img/biotechpro.svg" width="156" alt="Biotechpro">
+  
+      <div id="navMenu" class="flex font-serif text-2xl mx-auto space-x-16 md:flex md:items-center md:relative">
+        <a href="#" class="border-b-2 border-transparent hover:border-green-600 md:my-0 md:mx-4 hidden md:block">Home</a>
+        <a href="#" class="border-b-2 border-transparent hover:border-green-600 md:my-0 md:mx-4 hidden md:block">About us</a>
+        <a href="#" class="border-b-2 border-transparent hover:border-green-600 md:my-0 md:mx-4 hidden md:block">Services</a>
+        <a href="#" class="border-b-2 border-transparent hover:border-green-600 md:my-0 md:mx-4 hidden md:block">Contacts</a>
+      </div>
+    
+      <span class="text-5xl cursor-pointer mx-2 flex justify-end md:hidden">
+      <ion-icon class="menu-icon" name="menu-outline" onclick="toggleMenu(this)"></ion-icon>
+      </span>
+    </nav>
+
+    <section class="main mt-40 flex">
+        <h1 class="ml-10 text-8xl">Quality <br> Wood Chips</h1>
+        <img class="rounded-3xl mx-auto w-96 h-auto"  src="/img/woodchips1.png" alt="woodchips">
+    </section>
+    <script>
+      function toggleMenu() {
+          let navLinksList = document.querySelector('#navMenu');
+          let icon = document.querySelector('.menu-icon');
+
+          navLinksList.classList.toggle('hidden');
+          icon.setAttribute('name', navLinksList.classList.contains('hidden') ? 'menu' : 'close');
+      }
+  </script>
+    
+  </body>
+</html>

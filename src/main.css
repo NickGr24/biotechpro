@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    background-color: theme('backgroundColor.background');
+}
+
+@media (max-width: 767px) {
+    #navMenu a {
+      display: none;
+    }
+}
+
