@@ -5,39 +5,98 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biotechpro</title>
     <link rel="stylesheet" href="public/styles.css">
-    <link rel="icon" href="/img/favicon-32.png" type="image/x-icon">
+    <link rel="icon" href="/public/img/favicon-32.png" type="image/x-icon">
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
 <body>
-    <nav class="container mx-auto my-6 md:flex md:items-center md:justify-between">
-      <img src="/img/biotechpro.svg" width="156" alt="Biotechpro">
-  
+    <nav class="w-full mx-auto bg-green-700 h-20  shadow-lg fixed flex md:items-center md:justify-between">
+      <div class="flex ml-auto">
+        <img class="pr-1 md:h-8" src="/public/img/favicon-32.png" alt="logo">
+        <span class="text-2xl font-sans">Biotechpro</span>
+      </div>
       <div id="navMenu" class="flex font-serif text-2xl mx-auto space-x-16 md:flex md:items-center md:relative">
-        <a href="#" class="border-b-2 border-transparent hover:border-green-600 md:my-0 md:mx-4 hidden md:block">Home</a>
-        <a href="#" class="border-b-2 border-transparent hover:border-green-600 md:my-0 md:mx-4 hidden md:block">About us</a>
-        <a href="#" class="border-b-2 border-transparent hover:border-green-600 md:my-0 md:mx-4 hidden md:block">Services</a>
-        <a href="#" class="border-b-2 border-transparent hover:border-green-600 md:my-0 md:mx-4 hidden md:block">Contacts</a>
+        <a href="#" class="lng-home border-b-2 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Home</a>
+        <a href="#about" class="lng-about border-b-2 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">About us</a>
+        <a href="#services" class="lng-services border-b-2 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Services</a>
+        <a href="#contacts" class="lng-contacts border-b-2 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Contacts</a>
+        
+        <select id="select-lang" class="bg-green-700 font-serif font-semibold">
+          <option value="ru">RU</option>
+          <option value="md" selected>MD</option>
+          <option value="en">EN</option>
+        </select>
+
       </div>
     
       <span class="text-5xl cursor-pointer mx-2 flex justify-end md:hidden">
-      <ion-icon class="menu-icon" name="menu-outline" onclick="toggleMenu(this)"></ion-icon>
+      <ion-icon class="menu-icon" name="menu-outline" onclick="toggleMenu()"></ion-icon>
       </span>
     </nav>
+    <section class="main flex flex-col items-center flex-wrap md:flex-row pt-28">
+      <h1 class="lng-main-heading ml-10 md:text-8xl text-6xl">Quality<br>Wood Chips</h1>
+      <div class="mx-auto">
+          <img class="rounded-3xl w-56 md:w-96" src="/public/img/woodchips.png" alt="woodchips">
+      </div>
+  </section>
 
-    <section class="main mt-40 flex">
-        <h1 class="ml-10 text-8xl">Quality <br> Wood Chips</h1>
-        <img class="rounded-3xl mx-auto w-96 h-auto"  src="/img/woodchips1.png" alt="woodchips">
-    </section>
-    <script>
-      function toggleMenu() {
-          let navLinksList = document.querySelector('#navMenu');
-          let icon = document.querySelector('.menu-icon');
+  <section id="about" class="about flex flex-col items-center justify-center my-56">
+    <hr class="bg-green-500 border-0 w-1/4 h-1">
+    <div class="about-text flex flex-col items-center justify-center">
+      <h2 class="lng-about-heading flex justify-center font-semibold my-10 text-5xl">
+        About Biotechpro
+      </h2>
+      <span class="lng-about-subtitle max-w-3xl font-mono my-10">Biotechpro is a leading producer of high-quality wood chips in Moldova. We are committed to sustainability and environmental responsibility. Our wood chips are made from carefully selected wood sources and undergo a rigorous production process to ensure optimal quality. We serve various industries, including biomass energy, agriculture, and landscaping. With our expertise and dedication, we aim to contribute to a greener and more sustainable future.</span>
+    </div>
+    <hr class="bg-green-500 border-0 w-1/4 h-1">
+  </section>
 
-          navLinksList.classList.toggle('hidden');
-          icon.setAttribute('name', navLinksList.classList.contains('hidden') ? 'menu' : 'close');
-      }
-  </script>
+  <section id="services">
+    <h3 class="lng-services-heading text-5xl flex justify-center mb-5 font-semibold">Our Services</h3>
+    <div class="services font-mono flex flex-col sm:flex-row items-center text-lg justify-around">
+    <div class="roots">
+      <img src="/public/img/root.png" class="mx-auto mb-5" alt="root">
+      <span class="lng-roots my-5">Renovation and
+        recycling<br>of old
+        gardens</span>
+    </div>
+    <div class="trunks">
+      <img src="/public/img/trunk.png" class="mx-auto mb-5" alt="trunk">
+      <span class="lng-trunks flex justify-center">Any trunk diameter</span>
+    </div>
+    <div class="branches">
+      <img src="/public/img/branch.png" class="mx-auto mb-5" alt="branch">
+      <span class="lng-branches">Annual and seasonal<br>
+        pruning of the gardens</span>
+    </div>
+  </div>
+  </section>
+
+  <section class="partners mt-56 mb-24">
+    <h2 class="lng-partners-heading flex justify-center text-5xl font-semibold mb-10">Our Partners</h2>
+    <div class="flex flex-col sm:flex-row justify-around items-center font-mono">
+        <img class="w-36" src="/public/img/orheivit.webp" alt="OrheiVit">
+        <img class="w-36 rounded-3xl" src="/public/img/vis.jpg" alt="Vis">
+        <img class="w-36" src="/public/img/naturbravo.jpg" alt="NaturBravo">
     
+    </div>
+  </section>
+  <footer id="contacts" class="bg-green-700 flex h-28 justify-around">
+        <div class="email flex align-middle">
+          <img src="/public/img/email.png " alt="email" class="w-8 h-8">
+          <p>biotechpromd@gmail.com</p>
+        </div>
+        <div class="phones flex">
+          <img class="w-6 h-6" src="/public/img/phone.png" alt="phone icon">
+          <p>+37360465906<br>
+          +37362105757</p>
+        </div>
+
+        <div class="lng-rights align-text-bottom">
+           Copyright © 2024. Biotechpro S.R.L. All rights reserved.
+        </div>
+  </footer>  
+
+    <script src="/src/app.js"></script>
   </body>
 </html>
