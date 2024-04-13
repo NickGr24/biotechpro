@@ -9,94 +9,180 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </head>
+
 <body>
-    <nav class="w-full mx-auto bg-green-700 h-20  shadow-lg fixed flex md:items-center md:justify-between">
-      <div class="flex ml-auto">
-        <img class="pr-1 md:h-8" src="/public/img/favicon-32.png" alt="logo">
-        <span class="text-2xl font-sans">Biotechpro</span>
+    <nav class="w-full mx-auto bg-gray-100 h-20 shadow-lg fixed z-20 flex md:items-center md:justify-around">
+      <div class="flex justify-start items-center">
+        <img class="h-20 object-cover md:mt-1 pr-1 md:h-full md:w-12" src="/public/img/logo.jpg" alt="logo">
+        <h1 class="text-4xl text-green-800 flex-grow">Biotechpro</h1>
       </div>
-      <div id="navMenu" class="flex font-serif text-2xl mx-auto space-x-16 md:flex md:items-center md:relative">
-        <a href="#" class="lng-home border-b-2 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Home</a>
-        <a href="#about" class="lng-about border-b-2 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">About us</a>
-        <a href="#services" class="lng-services border-b-2 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Services</a>
-        <a href="#contacts" class="lng-contacts border-b-2 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Contacts</a>
-        
-        <select id="select-lang" class="bg-green-700 font-serif font-semibold">
+      <div class="md:hidden ml-auto flex">
+        <button id="burger-menu" class="text-5xl cursor-pointer mx-2 flex justify-end">
+          <ion-icon class="menu-icon mt-5" name="menu-outline"></ion-icon>
+        </button>
+        <div id="burger-dropdown" class="hidden bg-gray-100 absolute top-20 right-0 z-10 p-4">
+          <a href="#" class="lng-home text-3xl block my-2">Home</a>
+          <a href="#about" class="lng-about text-3xl block my-2">About us</a>
+          <a href="#services" class="lng-services text-3xl block my-2">Services</a>
+          <a href="#gallery" class="lng-gallery text-3xl block my-2">Gallery</a>
+          <select id="select-lang" class="select-lang text-2xl bg-gray-100 font-serif">
+            <option value="ru">RU</option>
+            <option value="md" selected>MD</option>
+            <option value="en">EN</option>
+        </select>
+        </div>
+      </div>
+
+      <div id="navMenu" class="hidden md:flex font-serif text-2xl space-x-16 md:items-center md:relative">
+        <a href="#" class="lng-home border-b-4 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Home</a>
+        <a href="#about" class="lng-about border-b-4 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">About us</a>
+        <a href="#services" class="lng-services border-b-4 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Services</a>
+        <a href="#gallery" class="lng-gallery border-b-4 border-transparent hover:border-green-500 md:my-0 md:mx-4 hidden md:block">Gallery</a>
+        <select name="select-lang" class="select-lang bg-gray-100 font-serif">
           <option value="ru">RU</option>
           <option value="md" selected>MD</option>
           <option value="en">EN</option>
-        </select>
-
+      </select>
       </div>
-    
-      <span class="text-5xl cursor-pointer mx-2 flex justify-end md:hidden">
-      <ion-icon class="menu-icon" name="menu-outline" onclick="toggleMenu()"></ion-icon>
-      </span>
     </nav>
-    <section class="main flex flex-col items-center flex-wrap md:flex-row pt-28">
-      <h1 class="lng-main-heading ml-10 md:text-8xl text-6xl">Quality<br>Wood Chips</h1>
+
+    <section class="main flex flex-col items-center flex-wrap md:flex-row pt-36">
+      <h1 class="lng-main-heading mx-auto md:text-8xl text-6xl text-center ">Quality<br>Wood Chips</h1>
       <div class="mx-auto">
-          <img class="rounded-3xl w-56 md:w-96" src="/public/img/woodchips.png" alt="woodchips">
+          <img class="rounded-3xl w-80 md:w-80 my-7" src="/public/img/main-photo.jpg" alt="woodchips">
       </div>
   </section>
 
   <section id="about" class="about flex flex-col items-center justify-center my-56">
-    <hr class="bg-green-500 border-0 w-1/4 h-1">
+    <hr class="bg-green-500 border-0 w-1/3 md:w-1/4 h-1">
     <div class="about-text flex flex-col items-center justify-center">
-      <h2 class="lng-about-heading flex justify-center font-semibold my-10 text-5xl">
+      <h2 class="lng-about-heading flex justify-center items-center font-semibold my-10 text-5xl">
         About Biotechpro
       </h2>
-      <span class="lng-about-subtitle max-w-3xl font-mono my-10">Biotechpro is a leading producer of high-quality wood chips in Moldova. We are committed to sustainability and environmental responsibility. Our wood chips are made from carefully selected wood sources and undergo a rigorous production process to ensure optimal quality. We serve various industries, including biomass energy, agriculture, and landscaping. With our expertise and dedication, we aim to contribute to a greener and more sustainable future.</span>
+      <span class="lng-about-subtitle max-w-3xl px-5 font-mono my-10">Biotechpro is a leading producer of high-quality wood chips in Moldova. We are committed to sustainability and environmental responsibility. Our wood chips are made from carefully selected wood sources and undergo a rigorous production process to ensure optimal quality. We serve various industries, including biomass energy, agriculture, and landscaping. With our expertise and dedication, we aim to contribute to a greener and more sustainable future.</span>
     </div>
-    <hr class="bg-green-500 border-0 w-1/4 h-1">
+    <hr class="bg-green-500 border-0 w-1/3 md:w-1/4 h-1">
   </section>
 
-  <section id="services">
+  <section id="numbers" class="my-56">
+    <h2 class="lng-numbers text-5xl font-semibold text-center">Biotechpro in numbers</h2>
+    <div id="stats" class="bg-white py-24 sm:py-32">
+      <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <dl class="grid grid-cols-1 gap-x-8 gap-y-16 text-center lg:grid-cols-3">
+          <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+            <dt class="lng-numbers-day text-base leading-7 text-gray-600">Per day</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight text-green-600 sm:text-5xl">
+              <span class="lng-tons animate-[counter_5s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-day)] before:content-[counter(num)]"><span class="sr-only">Up to 50</span>tons</span>
+            </dd>
+          </div>
+          <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+            <dt class="lng-numbers-month text-base leading-7 text-gray-600">Per month</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight text-green-600 sm:text-5xl">
+              <span class="lng-tons animate-[counter_6s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-month)] before:content-[counter(num)]"><span class="sr-only">1.000</span>tons</span>
+            </dd>
+          </div>
+          <div class="mx-auto flex max-w-xs flex-col gap-y-4">
+            <dt class="lng-numbers-year text-base leading-7 text-gray-600">Per year</dt>
+            <dd class="order-first text-3xl font-semibold tracking-tight text-green-600 sm:text-5xl">
+              <span class="lng-tons animate-[counter_7s_ease-out_forwards] tabular-nums [counter-set:_num_var(--num-year)] before:content-[counter(num)] before:left-[calc(0.4em * var(--n, 1))]">
+                <span class="lng-tons-number sr-only">Up to 10.000</span>tons
+              </span>
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="flex flex-col justify-center text-center">
     <h3 class="lng-services-heading text-5xl flex justify-center mb-5 font-semibold">Our Services</h3>
     <div class="services font-mono flex flex-col sm:flex-row items-center text-lg justify-around">
     <div class="roots">
-      <img src="/public/img/root.png" class="mx-auto mb-5" alt="root">
+      <img src="/public/img/root.png" class="mx-auto my-5" alt="root">
       <span class="lng-roots my-5">Renovation and
-        recycling<br>of old
-        gardens</span>
+        recycling<br>of old gardens</span>
     </div>
     <div class="trunks">
-      <img src="/public/img/trunk.png" class="mx-auto mb-5" alt="trunk">
+      <img src="/public/img/trunk.png" class="mx-auto my-5" alt="trunk">
       <span class="lng-trunks flex justify-center">Any trunk diameter</span>
     </div>
     <div class="branches">
-      <img src="/public/img/branch.png" class="mx-auto mb-5" alt="branch">
+      <img src="/public/img/branch.png" class="mx-auto my-5" alt="branch">
       <span class="lng-branches">Annual and seasonal<br>
         pruning of the gardens</span>
     </div>
   </div>
   </section>
 
-  <section class="partners mt-56 mb-24">
-    <h2 class="lng-partners-heading flex justify-center text-5xl font-semibold mb-10">Our Partners</h2>
-    <div class="flex flex-col sm:flex-row justify-around items-center font-mono">
-        <img class="w-36" src="/public/img/orheivit.webp" alt="OrheiVit">
-        <img class="w-36 rounded-3xl" src="/public/img/vis.jpg" alt="Vis">
-        <img class="w-36" src="/public/img/naturbravo.jpg" alt="NaturBravo">
-    
+  <section class="partners flex flex-col justify-center mt-56 mb-24">
+    <h2 class="lng-partners-heading flex justify-center text-center text-5xl font-semibold mb-10">Our Partners</h2>
+    <div id="partner-slider" class="flex flex-col sm:flex-row justify-around items-center font-mono">
+      <div class="partner-slide">
+        <img class="w-56 md:w-48" src="/public/img/orheivit.webp" alt="OrheiVit">
+      </div>
+      <div class="partner-slide">
+        <img class="w-56 md:w-48 md:ml-10 rounded-3xl my-10" src="/public/img/vis.jpg" alt="Vis">
+      </div>
+      <div class="partner-slide">
+        <img class="w-72 h-56" src="/public/img/naturbravo.jpg" alt="NaturBravo">
+      </div>
     </div>
   </section>
-  <footer id="contacts" class="bg-green-700 flex h-28 justify-around">
-        <div class="email flex align-middle">
-          <img src="/public/img/email.png " alt="email" class="w-8 h-8">
-          <p>biotechpromd@gmail.com</p>
-        </div>
-        <div class="phones flex">
-          <img class="w-6 h-6" src="/public/img/phone.png" alt="phone icon">
-          <p>+37360465906<br>
-          +37362105757</p>
-        </div>
 
-        <div class="lng-rights align-text-bottom">
+  <div id="myModal" class="modal fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+    <span class="modal-close absolute top-5 right-5 text-white text-3xl cursor-pointer">&times;</span>
+    <img class="modal-content max-w-full max-h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2" id="modalImg">
+</div>
+
+  <section id="gallery" class="flex flex-col items-center justify-center my-36">
+    <h2 class="lng-gallery flex justify-center text-5xl font-semibold mb-20">Galerie</h2>
+    <div id="slider" class="relative overflow-hidden w-full z-10 md:w-1/2 rounded-3xl">
+      <div id="slides" class="flex">
+        <img src="/public/img/img1.jpg" alt="Photo 1" class="w-full">
+        <img src="/public/img/img2.png" alt="Photo 2" class="w-full">
+        <img src="/public/img/img3.jpg" alt="Photo 3" class="w-full">
+        <img src="/public/img/heizohack.webp" alt="Photo 4" class="w-full">
+      </div>
+      <button id="prev" class="absolute top-1/2 left-0 transform -translate-y-1/2 text-white z-10 text-4xl">
+        <ion-icon name="arrow-back-circle-outline"></ion-icon>
+      </button>
+      <button id="next" class="absolute top-1/2 right-0 transform -translate-y-1/2 text-white z-10 text-4xl">
+        <ion-icon name="arrow-forward-circle-outline"></ion-icon>
+      </button>
+    </div>
+  </section>
+  
+  <section id="contacts" class="flex justify-center items-center flex-col mb-14">
+    <h1 class="lng-contact-us my-10 font-semibold text-3xl">Свяжитесь с нами</h1>
+    <div class="text-xl md:text-3xl flex-wrap px-10 md:px-40 font-mono text-center my-6">
+    <p class="lng-call-us">Напишите или позвоните нам и мы решим любые ваши проблемы с древесиной, территорией лесным массивом или садом. Удалим, расчистим, измельчим и вывезем.</p>
+    </div>
+    <div class="email flex align-middle">
+      <img class="text-2xl mr-2" src="/public/img/email.png" alt="email" >
+      <a href="mailto:biotechpromd@gmail.com" class="mt-1">biotechpromd@gmail.com</a>
+    </div>
+    <div class="phones mt-4 flex items-center mr-20"> 
+        <img class="mr-2" src="/public/img/phone.png" alt="phone icon">
+        <a href="tel:+37360465906">+37360465906</a>
+    </div>
+    <div class="phones flex mr-10"> 
+        <a href="tel:+37362105757">+37362105757</a>
+    </div>
+</section>
+
+  <footer class="w-full bg-gray-200 flex h-24 shadow-lg flex-col md:flex-row justify-around">
+        <div class="social flex justify-center md:justify-around">
+          <a href="https://www.tiktok.com/@biotechpromd"><ion-icon class="text-4xl" name="logo-tiktok"></ion-icon></a>
+          <a href="" class="text-4xl"><ion-icon name="logo-facebook"></ion-icon></a>
+        </div>
+        <div class="lng-rights">
            Copyright © 2024. Biotechpro S.R.L. All rights reserved.
         </div>
   </footer>  
 
-    <script src="/src/app.js"></script>
-  </body>
+  <script src="/src/app.js"></script>
+  <script src="/src/slider.js"></script>
+  <script src="/src/dropdown.js"></script>
+  <script src="src/detailPhoto.js"></script>
+</body>
 </html>

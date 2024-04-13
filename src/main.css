@@ -8,10 +8,35 @@ body{
   box-sizing: border-box;
 }
 
-@media (max-width: 767px) {
-    #navMenu a {
-      display: none;
-    }
-
+@property --num-day {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
 }
+
+@property --num-month {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@property --num-year {
+  syntax: "<integer>";
+  initial-value: 0;
+  inherits: false;
+}
+
+@keyframes counter {
+  from {
+    --num-day: 0;
+    --num-month: 0;
+    --num-year: 0;
+  }
+  to {
+    --num-day: 50;
+    --num-month: 1000;
+    --num-year: 10000;
+  }
+}
+
 
